@@ -15,7 +15,7 @@ public class TestTriangle {
 	@Test
 	public void testConversionMetresPixels() {
 		
-		IHMVoiture monTriangle = new IHMVoiture();
+		Calculate monTriangle = new Calculate();
 		
 		int xPixels = monTriangle.calculerPositionPixels(110);
 		

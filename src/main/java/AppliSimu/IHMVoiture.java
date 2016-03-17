@@ -16,11 +16,11 @@ import javax.swing.JPanel;
 
 import DomaineVoiture.Voiture;
 
-public class IHMVoiture extends JFrame implements Observer{
+public class IHMVoiture extends JFrame {
 
-	private double paramatreConversionMetresPixels = 0.5;
 	private Voiture maVoiture;
 	private CommandeVoiture maCommandeVoiture;
+	private  int xPixel;
 	
 	private void initGraphique() {
 		this.setTitle("Simulateur de Voiture");
@@ -34,7 +34,7 @@ public class IHMVoiture extends JFrame implements Observer{
 	public IHMVoiture(Voiture maVoiture) {
 		super();
 		this.maVoiture = maVoiture;
-		maVoiture.addObserver(this);
+		//maVoiture.addObserver(this);
 		initGraphique();
 	}
 
@@ -44,14 +44,6 @@ public class IHMVoiture extends JFrame implements Observer{
 		this.maVoiture = null;
 	}
 	
-	public int calculerPositionPixels(int xMetres) {
-		return (int) (paramatreConversionMetresPixels * xMetres);	
-	}
-
-	@Override
-	public void update(Observable arg0, Object arg1) {
-		this.repaint();
-	}
 
 	@Override
 	public void paint(Graphics contexteGraphique) {
@@ -61,10 +53,15 @@ public class IHMVoiture extends JFrame implements Observer{
 	}
 
 
+
+	public void setPixel(int xPixel){
+		this.xPixel = xPixel;
+	}
+
 	private void dessinerVoiture(Graphics contexteGraphique) {
-		int xMetres = maVoiture.getX();
-		int xPixel = calculerPositionPixels(xMetres);
-		contexteGraphique.fillRect(xPixel, 300, 30, 15);
+		//int xMetres = maVoiture.getX();
+		//int xPixel = myview.calculerPositionPixels(xMetres);
+		contexteGraphique.fillRect(this.xPixel, 300, 30, 15);
 	}
 	
 }

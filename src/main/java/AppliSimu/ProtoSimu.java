@@ -15,6 +15,7 @@ public class ProtoSimu {
 
 		final Voiture maVoiture = new Voiture (100, 0, 10);
 		IHMVoiture monTriangle = new IHMVoiture(maVoiture);
+		View myView = new View(monTriangle, maVoiture); /* Cette ligne manquait */
 		
 		Timer timerAvancer = new Timer(dureeUneSecondeEnMilliSecondes, new ActionListener() {
 			
