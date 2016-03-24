@@ -3,14 +3,15 @@ package AppliSimu;
 /**
  * Created by sow25 on 17/03/16.
  */
-public class Calculate {
+public class Convertion {
 
     private double paramatreConversionMetresPixels = 0.5;
 
-    public Calculate(){
+    public Convertion(){
     }
 
-    public int calculerPositionPixels(int xMetres) {
+    public int conversionPositionPixel(int xMetres) {
         return (int) (paramatreConversionMetresPixels * xMetres);
     }
 }
+

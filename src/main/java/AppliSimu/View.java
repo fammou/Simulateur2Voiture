@@ -12,13 +12,13 @@ public class View implements Observer {
 
     private IHMVoiture ihmVoiture;
     private Voiture voiture;
-    private Calculate calcul;
+    private Convertion calcul;
 
     public View(IHMVoiture ihmVoiture, Voiture voiture){
         this.ihmVoiture = ihmVoiture;
         this.voiture = voiture;
         this.voiture.addObserver(this);
-        this.calcul = new Calculate();
+        this.calcul = new Convertion();
     }
 
 
@@ -26,7 +26,7 @@ public class View implements Observer {
     @Override
     public void update(Observable arg0, Object arg1) {
         int xMetres = this.voiture.getX();
-        int xPixel = this.calcul.calculerPositionPixels(xMetres);
+        int xPixel = this.calcul.conversionPositionPixel(xMetres);
         this.ihmVoiture.setPixel(xPixel);
         this.ihmVoiture.repaint();
     }

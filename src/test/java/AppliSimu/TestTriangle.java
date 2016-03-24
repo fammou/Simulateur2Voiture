@@ -15,9 +15,9 @@ public class TestTriangle {
 	@Test
 	public void testConversionMetresPixels() {
 		
-		Calculate monTriangle = new Calculate();
+		Convertion monTriangle = new Convertion();
 		
-		int xPixels = monTriangle.calculerPositionPixels(110);
+		int xPixels = monTriangle.conversionPositionPixel(110);
 		
 		assertEquals(55, xPixels);
 	}
